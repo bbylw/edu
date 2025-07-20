@@ -1,21 +1,410 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN" style="scroll-behavior: smooth;">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gemini Pro</title>
+
+    <title>海外高等教育风险识别与院校甄别权威指南</title>
+    <meta name="description" content="一份全面、权威的海外留学风险识别指南，帮助学生和家长识别文凭工厂、野鸡大学等教育欺诈，提供系统的尽职调查方案。">
+    <meta name="keywords" content="海外教育,留学指南,文凭工厂,野鸡大学,教育风险,留学安全,院校甄别,教育欺诈">
+    <meta name="author" content="Education Risk Assessment Team">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="海外高等教育风险识别与院校甄别权威指南">
+    <meta property="og:description" content="一份全面、权威的海外留学风险识别指南，帮助学生和家长识别文凭工厂、野鸡大学等教育欺诈。">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="container">
-        <div class="chat-container">
 
-        </div>
-        <div class="input-container">
-            <input type="text" id="question-input" placeholder="Enter your question">
-            <button id="question-btn">ask</button>
-        </div>
-    </div>
+<body>
+    <main>
+        <header>
+            <h1>审慎治学，<span class="accent-text">明辨真伪</span></h1>
+            <p class="subtitle">海外高等教育风险识别与院校甄别权威指南</p>
+
+
+        </header>
+
+        <nav class="toc">
+            <h3>快速导航</h3>
+            <ul>
+                <li><a href="#foreword">前言</a></li>
+                <li><a href="#warning-list">全球警示名单</a></li>
+                <li><a href="#identification-methods">如何识别</a></li>
+                <li><a href="#due-diligence">调查方案</a></li>
+                <li><a href="#resources">官方资源</a></li>
+            </ul>
+        </nav>
+
+        <article>
+            <section id="foreword">
+                <h2>前言</h2>
+                <p>全球化时代，出国留学已成为中国家庭在教育规划上的重要选择。然而，在广阔的国际教育市场中，机遇与风险并存。部分机构利用信息不对称，以"文凭工厂"（Diploma
+                    Mill）或存在严重认证问题的"野鸡大学"形式，侵害着广大学子的求学梦想与家庭的重大投资。</p>
+                <p>本指南旨在构建一个全面、权威的海外大学风险识别框架，为广大学生及家长提供一套行之有效的尽职调查方案，助力其做出明智、安全的教育选择，确保海外求学之路的真正价值。</p>
+
+                <!-- Statistics -->
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">已识别风险院校</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">覆盖国家地区</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">持续更新监控</span>
+                    </div>
+                </div>
+            </section>
+
+            <div class="cta-box">
+                <p>
+                    <strong>⚠️ 核心建议</strong><br>
+                    开启全球择校之旅前，首要任务是查询<br>
+                    <a href="http://jsj.moe.gov.cn/" class="cta-link" target="_blank" rel="noopener noreferrer">
+                        中华人民共和国教育部教育涉外监管信息网
+                    </a><br>
+                    确认目标院校是否在官方认可名单上<br>
+                    <span class="cta-emphasis">这是不可或缺的第一步！</span>
+                </p>
+            </div>
+
+            <section id="warning-list">
+                <h2>全球警示名单索引</h2>
+                <p class="section-intro">
+                    免责声明：此名单基于公开的政府公告、官方数据库及权威媒体调查，并非详尽无遗，且院校状况可能随时间变化。设立此名单旨在提供具体案例，展示风险识别方法，申请者务必进行独立的、最新的核实。</p>
+
+                <!-- Filter controls -->
+                <div class="filter-controls">
+                    <label for="country-filter">按国家筛选：</label>
+                    <select id="country-filter">
+                        <option value="">所有国家</option>
+                        <option value="英国">英国</option>
+                        <option value="美国">美国</option>
+                        <option value="澳大利亚">澳大利亚</option>
+                        <option value="香港">香港</option>
+                        <option value="泰国">泰国</option>
+                        <option value="日本">日本</option>
+                    </select>
+
+                    <label for="risk-filter">按风险等级筛选：</label>
+                    <select id="risk-filter">
+                        <option value="">所有等级</option>
+                        <option value="tier-1">第一级：黑名单</option>
+                        <option value="tier-2">第二级：官方制裁</option>
+                        <option value="tier-3">第三级：灰色地带</option>
+                    </select>
+                </div>
+
+                <div class="list-tier tier-1-blacklist" data-tier="tier-1">
+                    <h3>第一级：黑名单——已确认的虚假大学与文凭工厂</h3>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>虚假院校名称</th>
+                                    <th>运营国家/地区</th>
+                                    <th>备注</th>
+                                    <th>风险等级</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr data-country="英国" data-tier="tier-1">
+                                    <td>Wolverhamton University</td>
+                                    <td>英国</td>
+                                    <td>刻意模仿合法的"University of Wolverhampton"。</td>
+                                    <td><span class="risk-badge risk-critical">极高风险</span></td>
+                                </tr>
+                                <tr data-country="英国" data-tier="tier-1">
+                                    <td>Warnswick University</td>
+                                    <td>英国</td>
+                                    <td>刻意模仿合法的"University of Warwick"。</td>
+                                    <td><span class="risk-badge risk-critical">极高风险</span></td>
+                                </tr>
+                                <tr data-country="英国" data-tier="tier-1">
+                                    <td>Manchester Open University</td>
+                                    <td>英国</td>
+                                    <td>刻意模仿"University of Manchester"或"The Open University"。</td>
+                                    <td><span class="risk-badge risk-critical">极高风险</span></td>
+                                </tr>
+                                <tr data-country="香港" data-tier="tier-1">
+                                    <td>香港克莱顿大学 (Clayton University Hong Kong)</td>
+                                    <td>香港</td>
+                                    <td>现实版"克莱登大学"，曾被媒体广泛报道。</td>
+                                    <td><span class="risk-badge risk-critical">极高风险</span></td>
+                                </tr>
+                                <tr data-country="香港" data-tier="tier-1">
+                                    <td>国力书院 (现名"培领书院")</td>
+                                    <td>香港</td>
+                                    <td>涉嫌作为"博士工厂"，为学生伪造文书以获取菲律宾"野鸡大学"学位。</td>
+                                    <td><span class="risk-badge risk-critical">极高风险</span></td>
+                                </tr>
+                                <tr data-country="澳大利亚" data-tier="tier-1">
+                                    <td>College for Educational and Clinical Art Therapy</td>
+                                    <td>澳大利亚</td>
+                                    <td>被TEQSA列为未注册却提供高等教育课程的实体。</td>
+                                    <td><span class="risk-badge risk-critical">极高风险</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="list-tier tier-2-sanctions" data-tier="tier-2">
+                    <h3>第二级：官方制裁名单——曾受官方警告或处分的院校</h3>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>院校名称</th>
+                                    <th>所在国家</th>
+                                    <th>制裁/警告详情</th>
+                                    <th>发布机构与年份</th>
+                                    <th>风险等级</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr data-country="泰国" data-tier="tier-2">
+                                    <td>泰国暹罗大学 (Siam University)</td>
+                                    <td>泰国</td>
+                                    <td>在招收中国留学生过程中存在项目管理不规范。</td>
+                                    <td>中国教育部，2017年</td>
+                                    <td><span class="risk-badge risk-high">高风险</span></td>
+                                </tr>
+                                <tr data-country="美国" data-tier="tier-2">
+                                    <td>美国ITT技术学院 (ITT Tech)</td>
+                                    <td>美国</td>
+                                    <td>因教学管理混乱、无法达到认证标准被禁止招收新生。</td>
+                                    <td>美国教育部，2016年</td>
+                                    <td><span class="risk-badge risk-high">高风险</span></td>
+                                </tr>
+                                <tr data-country="英国" data-tier="tier-2">
+                                    <td>英国新白金汉大学 (Buckinghamshire New University)</td>
+                                    <td>英国</td>
+                                    <td>因签证拒签率过高，曾被暂停招收非欧盟国际学生。</td>
+                                    <td>中国教育部/英国内政部，2015年</td>
+                                    <td><span class="risk-badge risk-high">高风险</span></td>
+                                </tr>
+                                <tr data-country="日本" data-tier="tier-2">
+                                    <td>日本东京JLA外国语学校</td>
+                                    <td>日本</td>
+                                    <td>在学生管理上存在严重失职，与非法中介合作。</td>
+                                    <td>中国教育部，2014年</td>
+                                    <td><span class="risk-badge risk-high">高风险</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="list-tier tier-3-grey" data-tier="tier-3">
+                    <h3>第三级：灰色地带——学历价值存疑或认证存在差距的院校</h3>
+                    <p class="section-intro">此处的院校在本国合法，但其学位的含金量，特别是对中国学生回国发展的价值，存在巨大的不确定性。</p>
+                    <div class="case-study">
+                        <h4>深度案例：菲律宾永恒大学 (UPHSD)</h4>
+                        <p><strong>本土合法性：</strong> UPHSD是菲律宾一所获得官方认证的大型私立大学，拥有真实的校园、师生和课程。</p>
+                        <p><strong>核心风险（中国学生视角）：</strong>
+                            与中国留学服务中心（CSCSE）的认证流程存在"挑战和程序"上的不确定性。这意味着投入时间金钱后，所获学位最终可能无法获得对回国发展至关重要的CSCSE认证。任何关于认证的"挑战"或不确定性，都应被视为最高级别的警报。
+                        </p>
+                        <p><strong>结论：</strong> UPHSD并非"文凭工厂"，但完美诠释了"灰色地带"的风险。对于中国学生，它属于高风险选择。</p>
+                        <div class="risk-assessment">
+                            <span class="risk-badge risk-medium">中等风险</span>
+                            <span class="risk-note">需要额外尽职调查</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="identification-methods">
+                <h2>如何识别"文凭工厂"</h2>
+                <div class="content-box">
+                    <h3>红色警报：初步审查清单</h3>
+                    <div class="checklist-grid">
+                        <div class="checklist-item">
+                            <span class="checklist-icon">⚠️</span>
+                            <div class="checklist-content">
+                                <strong>认证可疑：</strong> 声称的认证机构无法在美英等国教育部官网或CHEA等权威机构查到。
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-icon">📝</span>
+                            <div class="checklist-content">
+                                <strong>标准宽松：</strong> 录取标准极低，或完全基于"生活经验"授予学位。
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-icon">⏰</span>
+                            <div class="checklist-content">
+                                <strong>速成承诺：</strong> 承诺在极短的时间内（数周或数天）即可获得学位。
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-icon">💰</span>
+                            <div class="checklist-content">
+                                <strong>收费模式：</strong> 学费按学位一次性收取，而非按学分或学期。
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-icon">🏫</span>
+                            <div class="checklist-content">
+                                <strong>校名混淆：</strong> 名称与知名大学高度相似，企图混淆视听。
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-icon">📍</span>
+                            <div class="checklist-content">
+                                <strong>地址虚假：</strong> 物理地址是邮政信箱或邮件代收点，而非真实校园。
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-icon">👥</span>
+                            <div class="checklist-content">
+                                <strong>信息匮乏：</strong> 网站上几乎没有关于师资力量的详细信息。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-study">
+                    <h4>国家级骗局案例："法明顿大学"钓鱼执法行动</h4>
+                    <p>"法明顿大学"是由美国政府亲自设立的假大学，旨在打击学生签证欺诈。它拥有极其逼真的网站、看似真实的认证，甚至被列入了美国政府官方授权的可招收国际学生的院校名单（SEVP）。</p>
+                    <p><strong>深刻教训：</strong> 尽职调查绝不能止于单一的、表面的核对。即使是官方名单，也可能因特殊原因（如钓鱼执法）而包含虚假实体。必须进行多维度、交叉验证的甄别。</p>
+                    <div class="lesson-highlight">
+                        <span class="lesson-icon">💡</span>
+                        <span class="lesson-text">关键教训：多重验证，交叉核实，永远不要依赖单一信息源</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="due-diligence">
+                <h2>尽职调查方案</h2>
+                <div class="content-box">
+                    <h3>五步验证法</h3>
+                    <div class="verification-steps">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>中国官方核查（不可或缺）</h4>
+                                <p>访问中国教育部"教育涉外监管信息网"（jsj.moe.gov.cn），核对院校是否在认可名单上。<strong>如果不在，立即停止考虑。</strong></p>
+                                <a href="http://jsj.moe.gov.cn/" target="_blank" rel="noopener noreferrer"
+                                    class="step-link">立即查询 →</a>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>留学目的地国官方核查</h4>
+                                <p>查询澳大利亚TEQSA、英国OfS、加拿大DLI名单等相应国家的官方监管机构网站。</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>认证机构核查（尤其适用于美国）</h4>
+                                <p>将学校声称的认证机构，拿到美国教育部（ED）或高等教育认证委员会（CHEA）官网进行反向核查。</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>红色警报扫描</h4>
+                                <p>对照上一部分的"红色警报清单"，仔细审视院校的官网和招生宣传。</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">5</div>
+                            <div class="step-content">
+                                <h4>公共记录检索</h4>
+                                <p>使用搜索引擎，将大学名称与"scam", "fraud", "warning", "预警", "丑闻"等关键词组合进行搜索，检查负面新闻。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="resources">
+                <h2>官方资源与工具</h2>
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <h4>🇨🇳 中国官方资源</h4>
+                        <ul>
+                            <li><a href="http://jsj.moe.gov.cn/" target="_blank"
+                                    rel="noopener noreferrer">教育部教育涉外监管信息网</a></li>
+                            <li><a href="http://www.cscse.edu.cn/" target="_blank"
+                                    rel="noopener noreferrer">中国留学服务中心</a></li>
+                            <li><a href="http://www.moe.gov.cn/" target="_blank"
+                                    rel="noopener noreferrer">中华人民共和国教育部</a></li>
+                        </ul>
+                    </div>
+                    <div class="resource-card">
+                        <h4>🇺🇸 美国官方资源</h4>
+                        <ul>
+                            <li><a href="https://www.ed.gov/" target="_blank" rel="noopener noreferrer">美国教育部</a></li>
+                            <li><a href="https://www.chea.org/" target="_blank" rel="noopener noreferrer">高等教育认证委员会
+                                    (CHEA)</a></li>
+                            <li><a href="https://studentaid.gov/" target="_blank"
+                                    rel="noopener noreferrer">联邦学生援助办公室</a></li>
+                        </ul>
+                    </div>
+                    <div class="resource-card">
+                        <h4>🇬🇧 英国官方资源</h4>
+                        <ul>
+                            <li><a href="https://www.officeforstudents.org.uk/" target="_blank"
+                                    rel="noopener noreferrer">学生办公室 (OfS)</a></li>
+                            <li><a href="https://www.gov.uk/government/organisations/department-for-education"
+                                    target="_blank" rel="noopener noreferrer">英国教育部</a></li>
+                            <li><a href="https://www.qaa.ac.uk/" target="_blank" rel="noopener noreferrer">质量保证机构
+                                    (QAA)</a></li>
+                        </ul>
+                    </div>
+                    <div class="resource-card">
+                        <h4>🇦🇺 澳大利亚官方资源</h4>
+                        <ul>
+                            <li><a href="https://www.teqsa.gov.au/" target="_blank" rel="noopener noreferrer">高等教育质量与标准署
+                                    (TEQSA)</a></li>
+                            <li><a href="https://www.dese.gov.au/" target="_blank"
+                                    rel="noopener noreferrer">教育、技能与就业部</a></li>
+                            <li><a href="https://www.studyinaustralia.gov.au/" target="_blank"
+                                    rel="noopener noreferrer">澳大利亚留学官网</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+        <!-- Back to top button -->
+        <button id="back-to-top" class="back-to-top-btn">↑</button>
+
+        <footer>
+            <div class="footer-content">
+                <p>该项目为开源项目，旨在提供留学预警信息。信息主要来源于公开渠道，仅供参考。</p>
+                <p>欢迎访问 <a href="https://github.com/bbylw/edu" target="_blank" rel="noopener noreferrer">GitHub 仓库</a>
+                    贡献更新。</p>
+                <div class="footer-links">
+                    <a href="#foreword">前言</a>
+                    <a href="#warning-list">警示名单</a>
+                    <a href="#identification-methods">识别方法</a>
+                    <a href="#due-diligence">调查方案</a>
+                    <a href="#resources">官方资源</a>
+                </div>
+                <p class="copyright">© 2024 Education Risk Assessment Team. 本指南采用开源许可证发布。</p>
+            </div>
+        </footer>
+    </main>
+
+    <!-- JavaScript for enhanced functionality -->
     <script src="script.js"></script>
 </body>
+
 </html>

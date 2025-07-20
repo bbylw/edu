@@ -1,12 +1,27 @@
 {
-  "name": "edu",
+  "name": "overseas-education-risk-guide",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "海外高等教育风险识别与院校甄别权威指南",
+  "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "python -m http.server 3000",
+    "start": "python -m http.server 8000"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "keywords": [
+    "education",
+    "overseas",
+    "university",
+    "diploma-mill",
+    "study-abroad",
+    "education-guide",
+    "海外教育",
+    "留学指南",
+    "文凭工厂"
+  ],
+  "author": "Education Risk Assessment Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bbylw/edu.git"
+  }
 }
